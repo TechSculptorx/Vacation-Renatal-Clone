@@ -1,6 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap');
 
 *,
 *::after,
@@ -16,6 +15,7 @@ html {
 
 body {
     font-family: "Playfair Display", serif;
+    height: 5000rem;
 }
 
 :root {
@@ -71,6 +71,16 @@ h2 {
 .btn-white:hover {
     color: var(--clr-white);
     background-color: transparent;
+}
+
+.page-title {
+    font-size: 5.4rem;
+    color: rgba(0, 0, 0, 0.8);
+    font-weight: 400;
+    text-align: center;
+    text-transform: capitalize;
+    letter-spacing: 1px;
+    padding-bottom: 7.5rem;
 }
 
 /* utilities class end */
@@ -150,8 +160,34 @@ header {
     text-decoration: none;
     color: var(--clr-4d4d4d);
     font-size: 1.5rem;
-    padding: 3.4rem 2rem;
+    padding: 3.7rem 2rem;
     font-weight: 400;
+    position: relative;
+}
+
+.header-buttons ul li a::after,
+.header-buttons ul li .active::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 4px;
+    background-color: var(--cle-fd7792);
+    border-radius: 5rem;
+    transform: scale(0);
+    transform-origin: center;
+    width: 100%;
+    transition: all 0.5s ease;
+}
+
+.header-buttons ul li .active::after {
+    transform: scale(1);
+    width: 103%;
+}
+
+.header-buttons ul li a:hover::after {
+    transform: scale(1);
 }
 
 /* nav or header end */
@@ -160,7 +196,7 @@ header {
 
 .hero {
     height: 100vh;
-    background: url(../images/hero-bg.webp) fixed no-repeat;
+    background: url(../images/hero-bg.png) fixed no-repeat;
     background-size: cover;
     background-position: center 0%;
     position: relative;
@@ -300,3 +336,163 @@ header {
 }
 
 /* about section end */
+
+/* apartment section  */
+
+.apartment {
+    background-color: #f3f4f7;
+    padding: 10rem 0;
+}
+
+.first-row {
+    display: flex;
+    flex-direction: row;
+}
+
+.room-card {
+    --clr-1: var(--clr-white);
+    --clr-2:var(--cle-fd7792);
+    --clr-3: var(--clr-black);
+    --clr-4:var(--clr-black);
+    --clr-5:var(--clr-808080);
+
+    display: flex;
+    width: 50%;
+    position: relative;
+}
+
+.room-card:hover  {
+    --clr-1: var(--cle-fd7792);
+    --clr-2:var(--clr-white);
+    --clr-3: var(--clr-white);
+    --clr-4: rgba(255, 255, 255, 0.6);
+    --clr-5:var(--clr-white);
+}
+
+
+.room-card .room-img  {
+    width: 50%;
+    position: relative;
+}
+
+.room-card .room-img a {
+    outline: none !important;
+}
+
+.room-card .room-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.room-content {
+    padding: 6rem 3rem;
+    width: 50%;
+    background-color: var(--clr-1);
+    position: relative;
+    transition: all 0.5s ease;
+}
+
+.room-content  * {
+    transition: all 0.5s ease;
+}
+
+.room-content::after {
+    content: "\f0de";
+    font-family: "Font Awesome 5 Free";
+    font-size: 5rem;
+    font-weight: 900;
+    color: var(--clr-1);
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translate(-30%,-50%) rotate(-90deg);
+    transition: all 0.5s ease;
+}
+
+.room-rating {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    column-gap: 0.7rem;
+    margin-bottom: 1rem;
+}
+
+.room-rating i {
+    color: var(--clr-2);
+    font-size: 1.2rem;
+}
+
+.room-content h3 {
+    text-align: center;
+}
+
+.room-content h3 a {
+    text-decoration: none;
+    color: var(--clr-3);
+    font-size: 3rem;
+    text-transform: capitalize;
+    font-family: "Playfair Display", serif;
+    font-weight: 400;
+}
+
+.room-content ul {
+    margin-top: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1.2rem;
+}
+
+.room-content ul li {
+    list-style: none;
+    font-family: "Poppins", Arial, sans-serif;
+    font-weight: 400;
+    line-height: 1.8;
+    color: var(--clr-5);
+    font-size: 1.4rem;
+    text-align: center;
+}
+
+.room-content ul li span {
+    color: var(--clr-4);
+}
+
+.btn-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.room-btn {
+    text-decoration: none;
+    font-size: 1.4rem;
+    color: var(--clr-black);
+    padding: 0.8rem 1.5rem;
+    border: 2px solid rgba(0, 0, 0, 0.1);
+    border-radius: 4px;
+    background-color: var(--clr-white);
+    text-align: center;
+}
+
+.room-card:hover .room-btn{
+    border: 2px solid transparent;
+}
+
+.second-row {
+    display: flex;
+}
+
+.second-row .room-card {
+    display: flex;
+    flex-direction: row-reverse;
+}
+
+.second-row .room-content::after {
+    top: 50%;
+    left: auto;
+    right: 0;
+    transform: translate(30%,-50%) rotate(90deg);
+}
+
+/* apartment section end */
