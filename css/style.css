@@ -94,6 +94,12 @@ nav {
     display: flex;
     justify-content: space-between;
     padding: 0.8rem 0;
+    align-items: center;
+}
+
+.left-nav {
+    display: flex;
+    column-gap: 0.5rem;
 }
 
 .left-nav p span {
@@ -134,6 +140,33 @@ header {
     justify-content: space-between;
     padding: 3rem 0;
     align-items: center;
+}
+
+.hamburger-wrapper {
+    padding: 1.5rem 1rem;
+    display: none;
+    z-index: 999999;
+}
+
+.hamburger,.hamburger::after,.hamburger::before {
+    height: 2px;
+    width: 3rem;
+    background-color: #000;
+    border-radius: 4px;
+    transition: all 0.3s ease-in;
+}
+
+.hamburger::after,.hamburger::before {
+    content: "";
+    display: block;
+}
+
+.hamburger::after {
+    transform: translateY(5px);
+}
+
+.hamburger::before {
+    transform: translateY(-7px);
 }
 
 .logo a {
@@ -202,13 +235,11 @@ header {
 }
 
 .hero-wrapper {
+    height: 100%;
     display: flex;
-    position: absolute;
     justify-content: space-between;
     align-items: center;
-    top: 30%;
-    right: 0;
-    left: 0;
+    column-gap: 2rem;
 }
 
 .left-hero h2 {
@@ -238,7 +269,6 @@ header {
     box-shadow: 0px 15px 34px -29px rgb(0 0 0 / 54%);
     width: 100%;
     max-width: 30%;
-    height: 100%;
 }
 
 .right-hero h3 {
@@ -383,6 +413,7 @@ header {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    display: block;
 }
 
 .room-content {
@@ -681,6 +712,7 @@ header {
 
 .mid-sec {
     background: url(../images/mid-section.png) fixed;
+    background-position: 50% 0;
     padding: 6rem 0;
 }
 
@@ -911,7 +943,7 @@ footer {
     color: rgba(255, 255, 255, 0.3);
 }
 
-::placeholder {
+.footer-input::placeholder {
     font-weight: 400;
     font-family: "poppins", arial, sans-serif;
     font-size: 1.5rem;
@@ -1009,3 +1041,230 @@ footer {
 }
 
 /* footer section end */
+
+/* media query */
+
+@media only screen and (max-width: 992px) {
+
+    .header-buttons-active .header-buttons ul li a::after, .header-buttons ul li .active::after,.header-buttons ul li a::after {
+        background-color: currentColor;
+        height: 2px;
+    }
+
+    .hamburger-active .hamburger {
+        transform: rotate(45deg);
+    }
+
+    .hamburger-active .hamburger::after {
+        transform: scale(0);
+    }
+
+    .hamburger-active .hamburger::before {
+        transform: rotate(-90deg);
+    }
+
+    .header-buttons {
+        position: fixed;
+        top: 0;
+        left: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: var(--cle-fd7792);
+        width: 100%;
+        height: 100vh;
+        z-index: 9999;
+        transform: translateX(100%);
+        transition: all 0.5s ease;
+    }
+
+    .header-buttons ul {
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        row-gap: 2rem;
+    }
+
+    .header-buttons ul li a {
+        font-size: 2rem;
+        padding: 0;
+        padding-bottom: 0.8rem;
+    }
+
+    .header-buttons-active {
+        transform: translate(0);
+    }
+
+    .hamburger-wrapper {
+        display: block;
+    }
+
+    .hero {
+        background: url(../images/hero-bg.png) no-repeat;
+        background-size: cover;
+        background-position: center 0;
+        position: relative;
+    }
+
+    .left-hero h1 {
+        font-size: 4rem;
+        padding-right: 25rem;
+    }
+    .right-hero {
+        max-width: 100%;
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        transform: translateY(100%);
+    }
+    .about {
+        padding: 0;
+        margin-top: 55rem;
+    }
+    .apartment {
+        margin-top: 112rem;
+    }
+    .first-row,
+    .second-row {
+        flex-direction: column;
+    }
+    .room-card {
+        width: 100%;
+    }
+    .feedback-wrapper {
+        flex-direction: column;
+        row-gap: 5rem;
+        justify-content: center;
+        align-items: center;
+    }
+    .feedback-card {
+        width: 70%;
+    }
+    .offers-wrapper {
+        flex-direction: column;
+        flex-wrap: nowrap;
+    }
+    .offer-card {
+        width: 100%;
+        padding-top: 1rem;
+    }
+    .offer-card .offer-card-img,
+    .offer-card .offer-card-img i {
+        height: 6rem;
+        width: 6rem;
+    }
+    .offer-card .offer-card-img i{
+        font-size: 2rem;
+    }
+    .footer-wrapper {
+        flex-wrap: wrap;
+    }
+    .padding-footer {
+        width: 50%;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .left-hero h1 {
+        padding-right: 15rem;
+    }
+    .about-wrapper {
+        flex-direction: column;
+        align-items: center;
+        row-gap: 5rem;
+    }
+    .about-card {
+        width: 100%;
+    }
+    .about-img, img {
+        height: 20rem;
+        object-fit: cover;
+    }
+    .apartment {
+        margin-top: 207rem;
+    }
+    .offer-wrapper {
+        flex-direction: column;
+    }
+    .right-offer h2, .right-p, .offers-wrapper, .offer-card {
+        padding-left: 0;
+    }
+    .offer-card {
+        padding-top: 2rem;
+    }
+    .blog-card-wrapper {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        row-gap: 5rem;
+    }
+    .blog-card {
+        width: 100%;
+    }
+    .blog-card .blog-card-img img {
+        height: 30rem;
+    }
+    .footer-wrapper {
+        flex-wrap: nowrap;
+        flex-direction: column;
+        align-items: flex-start;
+        row-gap: 3rem;
+    }
+    .padding-footer {
+        width: 100%;
+    }
+    .copyright-wrapper {
+        flex-direction: column;
+        row-gap: 2rem;
+        justify-content: flex-start;
+        align-items: flex-start;
+    }
+    .copyright-para {
+        width: 100%;
+    }
+    .copyright-icon {
+        width: 100%;
+        align-items: flex-start;
+        justify-content: flex-start ;
+    }
+}
+    @media  only screen and (max-width: 576px) {
+        .left-hero h1 {
+            padding-right: 0;
+        }
+        .left-nav {
+            flex-direction: column;
+        }
+        .first-row,
+        .second-row {
+            row-gap: 2rem;
+        }
+        .room-card,
+        .second-row .room-card {
+            flex-direction: column;
+        }
+        .room-card .room-img,
+        .room-card .room-content {
+            width: 100%;
+        }
+        .second-row {
+            margin-top: 2rem;
+        }
+        .room-content::after,
+        .second-row .room-content::after {
+            transform: rotate(0) translate(-50%, -39%);
+            top: 0;
+            left: 50%;
+            right: auto;
+        }
+        .feedback-card {
+            width: 100%;
+        }
+        .mid-sec {
+            background: url(../images/mid-section.png);
+            background-position: center 0;
+            background-size: cover;
+        }
+}
+
+/* media query end */

@@ -17,7 +17,9 @@
                 <p>
                     <span>Phone no : </span>
                     <a href="#">+00 123 456 789</a>
-                    <span>or email us : </span>
+                </p>
+                <p>
+                    <span> or email us : </span>
                     <a href="#">emailsample@email.com</a>
                 </p>
             </div>
@@ -36,6 +38,9 @@
         <div class="container header-wrapper">
             <div class="logo">
                 <a href="#">Vacation<span>Rental</span></a>
+            </div>
+            <div class="hamburger-wrapper">
+                <div class="hamburger"></div>
             </div>
             <div class="header-buttons">
                 <ul>
@@ -104,7 +109,7 @@
 
     <section class="about">
         <div class="container about-wrapper">
-            <div class="about-card" data-aos="fade-up">
+            <div class="about-card" data-aos="fade-up" data-aos-anchor-placement="top-center">
                 <div class="about-img">
                     <img src="./images/about-card-one.webp" alt="about-card-1">
                 </div>
@@ -118,7 +123,7 @@
                 </div>
             </div>
 
-            <div class="about-card" data-aos="fade-up">
+            <div class="about-card" data-aos="fade-up" data-aos-delay="200" data-aos-anchor-placement="top-center">
                 <div class="about-img">
                     <img src="./images/about-card-two.webp" alt="about-card-1">
                 </div>
@@ -132,7 +137,7 @@
                 </div>
             </div>
 
-            <div class="about-card" data-aos="fade-up">
+            <div class="about-card" data-aos="fade-up" data-aos-delay="400" data-aos-anchor-placement="top-center">
                 <div class="about-img">
                     <img src="./images/about-card-three.webp" alt="about-card-1">
                 </div>
@@ -270,7 +275,7 @@
                 <h1 class="page-title">Happy Clients & Feedbacks</h1>
             </div>
             <div class="feedback-wrapper">
-                <div class="feedback-card" data-aos="fade-up">
+                <div class="feedback-card" data-aos="fade-up" data-aos-anchor-placement="top-center">
                     <div class="client-img">
                         <img src="./images/client-1.webp" alt="client">
                     </div>
@@ -287,7 +292,8 @@
                     </div>
                 </div>
 
-                <div class="feedback-card" data-aos="fade-up">
+                <div class="feedback-card" data-aos="fade-up" data-aos-delay="100"
+                    data-aos-anchor-placement="top-center">
                     <div class="client-img">
                         <img src="./images/client-2.webp" alt="client">
                     </div>
@@ -304,7 +310,8 @@
                     </div>
                 </div>
 
-                <div class="feedback-card" data-aos="fade-up">
+                <div class="feedback-card" data-aos="fade-up" data-aos-delay="200"
+                    data-aos-anchor-placement="top-center">
                     <div class="client-img">
                         <img src="./images/client-1.webp" alt="client">
                     </div>
@@ -480,7 +487,7 @@
                 <span class="page-title-blog">news & blogs</span>
             </div>
             <div class="blog-card-wrapper">
-                <div class="blog-card" data-aos="fade-up">
+                <div class="blog-card" data-aos="fade-up" data-aos-anchor-placement="top-center">
                     <div class="blog-card-img">
                         <a href="#">
                             <img src="./images/blog-1.webp" alt="blog-1">
@@ -504,7 +511,7 @@
                     </div>
                 </div>
 
-                <div class="blog-card" data-aos="fade-up">
+                <div class="blog-card" data-aos="fade-up" data-aos-delay="200" data-aos-anchor-placement="top-center">
                     <div class="blog-card-img">
                         <a href="#">
                             <img src="./images/blog-2.webp" alt="blog-1">
@@ -528,7 +535,7 @@
                     </div>
                 </div>
 
-                <div class="blog-card" data-aos="fade-up">
+                <div class="blog-card" data-aos="fade-up" data-aos-delay="400" data-aos-anchor-placement="top-center">
                     <div class="blog-card-img">
                         <a href="#">
                             <img src="./images/blog-3.webp" alt="blog-1">
@@ -604,10 +611,10 @@
                         <a href="#" data-aos="fade-up">
                             <i class="fa-brands fa-twitter"></i>
                         </a>
-                        <a href="#" data-aos="fade-up">
+                        <a href="#" data-aos="fade-up" data-aos-delay="100">
                             <i class="fa-brands fa-facebook-f"></i>
                         </a>
-                        <a href="#" data-aos="fade-up">
+                        <a href="#" data-aos="fade-up" data-aos-delay="200">
                             <i class="fa-brands fa-instagram"></i>
                         </a>
                     </div>
@@ -645,6 +652,14 @@
     <script>
         AOS.init();
         new Textify();
+
+
+        const hamburger = document.querySelector(".hamburger-wrapper");
+        const navbar = document.querySelector(".header-buttons");
+        hamburger.addEventListener("click", () => {
+            navbar.classList.toggle("header-buttons-active");
+            hamburger.classList.toggle("hamburger-active")
+        })
     </script>
 
     <!-- script end -->
