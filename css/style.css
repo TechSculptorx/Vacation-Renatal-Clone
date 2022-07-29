@@ -228,7 +228,7 @@ header {
 
 .hero {
     height: 100vh;
-    background: url(../images/hero-bg.png) fixed no-repeat;
+    background: url(../images/hero-bg.webp) fixed no-repeat;
     background-size: cover;
     background-position: center 0%;
     position: relative;
@@ -711,7 +711,7 @@ header {
 /* mid-section start */
 
 .mid-sec {
-    background: url(../images/mid-section.png) fixed;
+    background: url(../images/mid-section.webp) fixed;
     background-position: 50% 0;
     padding: 6rem 0;
 }
@@ -1100,7 +1100,7 @@ footer {
     }
 
     .hero {
-        background: url(../images/hero-bg.png) no-repeat;
+        background: url(../images/hero-bg.we) no-repeat;
         background-size: cover;
         background-position: center 0;
         position: relative;
@@ -1261,7 +1261,7 @@ footer {
             width: 100%;
         }
         .mid-sec {
-            background: url(../images/mid-section.png);
+            background: url(../images/mid-section.w);
             background-position: center 0;
             background-size: cover;
         }
